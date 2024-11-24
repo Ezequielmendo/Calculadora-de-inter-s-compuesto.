@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Interés Compuesto</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Interés Compuesto</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">
+                        {{ message }}
+                        <button class="close-btn" onclick="this.parentElement.style.display='none';">&times;</button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/" method="POST">
+            <div>
+                <label for="capitalinicial">Capital inicial ($):</label>
+                <input type="number" step="0.01" id="capitalinicial" name="capitalinicial" required>
+            </div>
+            <div>
+                <label for="aportemensual">Aportación mensual ($):</label>
+                <input type="number" step="0.01" id="aportemensual" name="aportemensual" required>
+            </div>
+            <div>
+                <label for="periodo">Periodo de la inversión (años):</label>
+                <input type="number" id="periodo" name="periodo" required>
+            </div>
+            <div>
+                <label for="tasa">Tasa de interés anual (%):</label>
+                <input type="number" step="0.01" id="tasa" name="tasa" required>
+            </div>
+            <div>
+                <button type="submit">Calcular</button>
+            </div>
+        </form>
+        {% if capitalfinal %}
+            <div class="result" id="result-summary">
+                <h3>*Se uso frecuencia de capitalizaciòn mensual*</h3>
+                <h2>Resumen de Resultados:</h2>
+                <h3>Capital final: ${{capitalfinal}}</h3>
+                <h3>Ganancia: ${{ganancia}}</h3>
+                <h3>Inversión total: ${{inversiontotal}}</h3>
+            </div>
+        {% endif %}
+        {% if datos_tabla %}
+            <div class="result-container" id="result-table">
+                <h2>Tabla de resultados:</h2>
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Inversión Total ($)</th>
+                            <th>Capital Final ($)</th>
+                            <th>Ganancia ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fila in datos_tabla %}
+                        <tr>
+                            <td>{{ fila.Año }}</td>
+                            <td>{{ fila.Inversion_total }}</td>
+                            <td>{{ fila.Capital_final }}</td>
+                            <td>{{ fila.Ganancia }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        // Si necesitas ocultar mensajes flash automáticamente después de un tiempo:
+        setTimeout(() => {
+            document.querySelectorAll('.flash-message').forEach(msg => {
+                msg.style.display = 'none';
+            });
+        }, 5000); // Ocultar después de 5 segundos
+
+        // Scroll automático a la tabla de resultados
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const resultTable = document.getElementById('result-table');
+            if (resultTable) {
+                resultTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    </script>
+</body>
+</html>
