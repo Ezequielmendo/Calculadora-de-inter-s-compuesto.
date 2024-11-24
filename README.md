@@ -9,12 +9,13 @@ Una aplicación web que permite a los usuarios calcular el interés compuesto ba
 
 # **Requisitos**
 Para ejecutar este proyecto necesitas tener instalado:
-
+```
 -Python 3.8 o superior.
 -Un entorno virtual (opcional, pero recomendado).
 Las siguientes librerías de Python:
 -Flask
 -math (integrada en Python, no requiere instalación).
+```
 
 # **Instalación**
 Clona este repositorio:
@@ -55,16 +56,6 @@ calculadora-interes-compuesto/
 ├── README.md               # Documentación del proyecto
 └── requirements.txt        # Dependencias del proyecto
 ```
-
-# **Contribuciones**
-Si quieres contribuir a este proyecto:
-
-**Haz un fork del repositorio.**
-Crea una rama para tus cambios:
-
-git checkout -b nueva-funcionalidad
-Realiza tus cambios y súbelos al fork.
-Abre un Pull Request en este repositorio.
 
 # **Licencia**
 Este proyecto se distribuye bajo la licencia MIT.
