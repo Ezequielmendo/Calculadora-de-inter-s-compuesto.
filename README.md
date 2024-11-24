@@ -1,13 +1,13 @@
-#**Calculadora de Interés Compuesto**
+# **Calculadora de Interés Compuesto**
 Una aplicación web que permite a los usuarios calcular el interés compuesto basado en un capital inicial, una tasa de interés anual, un periodo en años y un aporte mensual. También genera una tabla con los resultados por año.
 
-#**Características**
+# **Características**
 -Cálculo del capital final usando interés compuesto.
 -Determinación de la ganancia total y el monto invertido.
 -Generación de una tabla con resultados anuales.
 -Interfaz web intuitiva y fácil de usar.
 
-#**Requisitos**
+# **Requisitos**
 Para ejecutar este proyecto necesitas tener instalado:
 
 -Python 3.8 o superior.
@@ -16,7 +16,7 @@ Las siguientes librerías de Python:
 -Flask
 -math (integrada en Python, no requiere instalación).
 
-#**Instalación**
+# **Instalación**
 Clona este repositorio:
 ```bash
 git clone https://github.com/Ezequielmendo/Calculadora-de-inter-s-compuesto.
@@ -29,12 +29,12 @@ cd calculadora-interes-compuesto
 ```bash
 python -m venv venv
 ```
-```bash
 Instala las dependencias:
+```bash
 pip install -r requirements.txt
 ```
 
-#**Uso**
+# **Uso**
 Inicia el servidor Flask:
 ```bash
 python main.py
@@ -43,7 +43,8 @@ Abre tu navegador web y accede a:
 http://127.0.0.1:5000
 Ingresa los datos requeridos en el formulario y haz clic en "Calcular". Verás los resultados directamente en la página.
 
-#**Estructura del Proyecto**
+# **Estructura del Proyecto**
+```
 calculadora-interes-compuesto/
 │
 ├── templates/
@@ -53,8 +54,9 @@ calculadora-interes-compuesto/
 ├── app.py                  # Código principal de la aplicación Flask
 ├── README.md               # Documentación del proyecto
 └── requirements.txt        # Dependencias del proyecto
+```
 
-#**Contribuciones**
+# **Contribuciones**
 Si quieres contribuir a este proyecto:
 
 **Haz un fork del repositorio.**
@@ -64,8 +66,8 @@ git checkout -b nueva-funcionalidad
 Realiza tus cambios y súbelos al fork.
 Abre un Pull Request en este repositorio.
 
-#**Licencia**
+# **Licencia**
 Este proyecto se distribuye bajo la licencia MIT.
 
-#**Sobre Mí**
+# **Sobre Mí**
 Este proyecto fue desarrollado por Ezequiel Mendoza. Si tienes dudas o sugerencias, ¡no dudes en contactarme!
